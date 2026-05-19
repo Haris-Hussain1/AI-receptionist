@@ -1,6 +1,6 @@
 # 3novatorTech — AI Receptionist
 
-> A full stack, production ready AI receptionist web application powered by **Groq** and **LLaMA 3.3**. Authenticate, chat with an intelligent AI receptionist, and manage appointments — all through a polished, responsive browser interface.
+> A full stack, production ready AI receptionist web application powered by **Groq** and **LLaMA 3.3**. Authenticate, chat with an intelligent AI receptionist, and manage appointments, all through a polished, responsive browser interface.
 
 ---
 
@@ -116,7 +116,7 @@ ai receptionist/
 ### Step 1 — Clone the repository
 
 ```bash
-git clone https://github.com/your-username/ai-receptionist.git
+git clone https://github.com/Haris-Hussain1/AI-receptionist.git
 cd "ai receptionist"
 ```
 
@@ -201,8 +201,8 @@ Register a new user account.
 ```json
 // Request body
 {
-  "name": "Alice",
-  "email": "alice@example.com",
+  "name": "Haris",
+  "email": "Haris@example.com",
   "password": "secret"
 }
 
@@ -211,7 +211,7 @@ Register a new user account.
   "success": true,
   "data": {
     "token": "<jwt>",
-    "name": "Alice"
+    "name": "Haris"
   }
 }
 ```
@@ -231,7 +231,7 @@ Authenticate an existing user.
 ```json
 // Request body
 {
-  "email": "alice@example.com",
+  "email": "Haris@example.com",
   "password": "secret"
 }
 
@@ -240,7 +240,7 @@ Authenticate an existing user.
   "success": true,
   "data": {
     "token": "<jwt>",
-    "name": "Alice"
+    "name": "Haris"
   }
 }
 ```
@@ -288,10 +288,10 @@ Create a new appointment manually. Requires authentication.
 ```json
 // Request body
 {
-  "name": "Alice",
+  "name": "Haris",
   "date": "2025-09-01",
   "time": "10:00",
-  "email": "alice@example.com",
+  "email": "Haris@example.com",
   "reason": "General consultation"
 }
 
@@ -301,8 +301,8 @@ Create a new appointment manually. Requires authentication.
   "data": {
     "id": 1,
     "user_id": 3,
-    "name": "Alice",
-    "email": "alice@example.com",
+    "name": "Haris",
+    "email": "Haris@example.com",
     "date": "2025-09-01",
     "time": "10:00",
     "reason": "General consultation"
@@ -329,8 +329,8 @@ Retrieve the authenticated user's appointments (most recent 20).
   "data": [
     {
       "id": 1,
-      "name": "Alice",
-      "email": "alice@example.com",
+      "name": "Haris",
+      "email": "Haris@example.com",
       "date": "2025-09-01",
       "time": "10:00",
       "reason": "General consultation"
