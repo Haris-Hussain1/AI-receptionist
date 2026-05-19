@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>3novatorTech — AI Receptionist</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="logo.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+
+      <!-- ── Header ─────────────────────────────────────────────────── -->
+      <header class="app-header">
+        <div class="brand">
+          <img src="logo.png" alt="3novatorTech" class="brand-logo-img" />
+          <span class="brand-title">3novatorTech</span>
+          <span class="brand-badge">AI Live</span>
+        </div>
+        <div class="header-actions">
+          <div class="user-pill">
+            <div class="user-avatar" id="user-avatar-initials">?</div>
+            <span id="user-display-name" class="user-display-name"></span>
+          </div>
+          <button class="logout-btn" onclick="logout()">Sign Out</button>
+        </div>
+      </header>
+
+      <!-- ── Main ───────────────────────────────────────────────────── -->
+      <main class="app-main">
+
+        <!-- Chat -->
+        <section class="panel panel-chat">
+          <div class="panel-header">
+            <div class="panel-title">
+              <div class="panel-title-icon icon-chat">💬</div>
+              AI Receptionist
+            </div>
+            <div class="status-dot" title="Online"></div>
+          </div>
+          <div id="chat-window" class="chat-window"></div>
+          <div class="chat-input-area">
+            <div id="voice-status" class="voice-status">🎙 Listening…</div>
+            <form id="chat-form" class="chat-input-row">
+              <button type="button" id="mic-btn" class="mic-btn" title="Voice input">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 1a4 4 0 0 1 4 4v7a4 4 0 0 1-8 0V5a4 4 0 0 1 4-4zm-1 17.93V21H9v2h6v-2h-2v-2.07A8 8 0 0 0 20 12h-2a6 6 0 0 1-12 0H4a8 8 0 0 0 7 7.93z"/>
+                </svg>
+              </button>
+              <input
+                id="chat-input"
+                type="text"
+                placeholder="Ask a question or say 'book an appointment'…"
+                autocomplete="off"
+              />
+              <button type="submit" class="send-btn" title="Send">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"/>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </section>
+
+        <!-- Booking + Appointments -->
+        <section class="panel panel-booking">
+          <div class="panel-header">
+            <div class="panel-title">
+              <div class="panel-title-icon icon-book">📅</div>
+              Book Appointment
+            </div>
+          </div>
+
+          <div class="panel-body">
+            <form id="booking-form" class="booking-form">
+              <div class="field">
+                <label for="name">Full Name *</label>
+                <input id="name" name="name" placeholder="Jane Smith" required />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="jane@example.com" />
+              </div>
+              <div class="field-row field">
+                <div class="field">
+                  <label for="date">Date *</label>
+                  <input id="date" name="date" type="date" required />
+                </div>
+                <div class="field">
+                  <label for="time">Time *</label>
+                  <input id="time" name="time" type="time" required />
+                </div>
+              </div>
+              <div class="field">
+                <label for="reason">Reason</label>
+                <textarea id="reason" name="reason" placeholder="Brief description…"></textarea>
+              </div>
+              <button type="submit" class="btn-primary">Save Appointment</button>
+              <p id="booking-status" class="status-text"></p>
+            </form>
+
+            <div class="section-divider"></div>
+
+            <div class="appointments-box" style="padding:0">
+              <div class="appointments-header">
+                <h3>
+                  <div class="panel-title" style="font-size:0.78rem">
+                    <div class="panel-title-icon icon-list" style="width:22px;height:22px;font-size:0.7rem">🗂</div>
+                    Recent Appointments
+                  </div>
+                </h3>
+                <button id="refresh-appointments" type="button" class="btn-ghost">↻ Refresh</button>
+              </div>
+              <ul id="appointments-list" class="appointments-list"></ul>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- ── Footer ─────────────────────────────────────────────────── -->
+      <footer class="app-footer">
+        <span>Backend: Flask · AI: Groq LLaMA 3.3 · DB: SQLite</span>
+        <div class="footer-status">
+          <div class="status-dot"></div>
+          <span>All systems operational</span>
+        </div>
+      </footer>
+
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Register — 3novatorTech</title>
+    <link rel="icon" type="image/png" href="logo.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="auth-shell">
+
+      <!-- Left branding panel -->
+      <div class="auth-left">
+        <div class="auth-left-brand">
+          <img src="logo.png" alt="3novatorTech" class="brand-logo-img" />
+          <span class="brand-title">3novatorTech</span>
+        </div>
+        <h1 class="auth-tagline">Your AI-powered<br /><span>front desk</span>,<br />always on.</h1>
+        <p class="auth-sub">Intelligent appointment booking and real-time AI assistance — built for modern teams.</p>
+        <div class="auth-features">
+          <div class="auth-feature">
+            <div class="auth-feature-icon">🤖</div>
+            Conversational AI receptionist
+          </div>
+          <div class="auth-feature">
+            <div class="auth-feature-icon">📅</div>
+            Smart appointment scheduling
+          </div>
+          <div class="auth-feature">
+            <div class="auth-feature-icon">🔒</div>
+            Secure JWT authentication
+          </div>
+        </div>
+      </div>
+
+      <!-- Right form panel -->
+      <div class="auth-right">
+        <div class="auth-card">
+          <h2 class="auth-heading">Create your account</h2>
+          <p class="auth-subheading">Get started — it's free</p>
+
+          <form id="register-form" class="auth-form">
+            <div class="field">
+              <label for="name">Full Name</label>
+              <input id="name" name="name" type="text" placeholder="Jane Smith" required />
+            </div>
+            <div class="field">
+              <label for="email">Email address</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required />
+            </div>
+            <div class="field">
+              <label for="password">Password</label>
+              <input id="password" name="password" type="password" placeholder="••••••••" required />
+            </div>
+            <p id="auth-error" class="auth-error"></p>
+            <button type="submit" class="auth-btn">Create Account</button>
+          </form>
+
+          <p class="auth-switch">
+            Already have an account? <a href="login.html">Sign in</a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+    <script src="auth.js"></script>
+    <script>
+      document.getElementById("register-form").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        await registerUser(
+          e.target.name.value.trim(),
+          e.target.email.value.trim(),
+          e.target.password.value
+        );
+      });
+    </script>
+  </body>
+</html>
