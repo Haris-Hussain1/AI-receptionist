@@ -1,6 +1,6 @@
 # 3novatorTech — AI Receptionist
 
-> A full-stack, production-ready AI receptionist web application powered by **Groq** and **LLaMA 3.3**. Authenticate, chat with an intelligent AI receptionist, and manage appointments — all through a polished, responsive browser interface.
+> A full stack, production ready AI receptionist web application powered by **Groq** and **LLaMA 3.3**. Authenticate, chat with an intelligent AI receptionist, and manage appointments — all through a polished, responsive browser interface.
 
 ---
 
@@ -24,24 +24,24 @@
 
 ## Overview
 
-The **3novatorTech AI Receptionist** is a full-stack web application that replaces a traditional front-desk receptionist with a conversational AI. Users register and log in securely, then interact with an AI assistant that can answer general questions and guide them through booking an appointment — all in natural language.
+The **3novatorTech AI Receptionist** is a full stack web application that replaces a traditional front desk receptionist with a conversational AI. Users register and log in securely, then interact with an AI assistant that can answer general questions and guide them through booking an appointment all in natural language.
 
-The backend is built with **Python + Flask**, the AI is powered by the **Groq cloud API** (no GPU or local model required), and all data is persisted in a lightweight **SQLite** database. The frontend is pure HTML, CSS, and JavaScript — served directly by Flask with no separate build step.
+The backend is built with **Python + Flask**, the AI is powered by the **Groq cloud API**, and all data is persisted in a lightweight **SQLite** database. The frontend is pure HTML, CSS, and JavaScript, served directly by Flask with no separate build step.
 
 ---
 
 ## Features
 
-- **JWT Authentication** — secure register and login flow; all protected routes require a Bearer token
-- **AI Chatbot** — conversational receptionist powered by Groq's LLaMA 3.3 70B model
-- **Voice Input & Output** — speak to the receptionist via the browser microphone; replies are read aloud using the Web Speech API
-- **Intelligent Booking Flow** — guided multi-step conversation that collects name and date, confirms with the user, then saves the appointment automatically
-- **Booking Form** — manual appointment creation with name, email, date, time, and reason fields
-- **Appointment Dashboard** — view your personal appointment history, refreshable on demand
-- **Modular Backend** — Flask Blueprints, a dedicated service layer, and clean separation of concerns
-- **No Local Model Required** — runs entirely through the Groq cloud API; works on any machine
-- **Responsive UI** — dark-theme interface that adapts to desktop and mobile screens
-- **Zero-config Database** — SQLite database is created automatically on first run; no setup needed
+- **JWT Authentication** : secure register and login flow; all protected routes require a Bearer token
+- **AI Chatbot** : conversational receptionist powered by Groq's LLaMA 3.3 70B model
+- **Voice Input & Output** : speak to the receptionist via the browser microphone; replies are read aloud using the Web Speech API
+- **Intelligent Booking Flow** : guided multi-step conversation that collects name and date, confirms with the user, then saves the appointment automatically
+- **Booking Form** : manual appointment creation with name, email, date, time, and reason fields
+- **Appointment Dashboard** : view your personal appointment history, refreshable on demand
+- **Modular Backend** : Flask Blueprints, a dedicated service layer, and clean separation of concerns
+- **No Local Model Required** : runs entirely through the Groq cloud API; works on any machine
+- **Responsive UI** : dark theme interface that adapts to desktop and mobile screens
+- **Zero config Database** : SQLite database is created automatically on first run; no setup needed
 
 ---
 
@@ -63,14 +63,14 @@ The backend is built with **Python + Flask**, the AI is powered by the **Groq cl
 
 ```
 ai receptionist/
-├── run.py                        # Entry point — run this to start the app
+├── run.py                        # Entry point : run this to start the app
 ├── .env                          # API keys and secrets (never commit this)
 ├── .gitignore
 ├── requirements.txt
 ├── README.md
 │
 ├── backend/
-│   ├── app.py                    # App factory — creates Flask app, registers blueprints
+│   ├── app.py                    # App factory : creates Flask app, registers blueprints
 │   ├── config.py                 # Centralised config (DB path, Groq key/model, secret key)
 │   │
 │   ├── routes/
@@ -160,11 +160,11 @@ Flask serves all frontend files directly — no separate dev server or build ste
 
 Create a `.env` file in the project root with the following keys:
 
-| Variable       | Required | Description                                                                 |
-|----------------|----------|-----------------------------------------------------------------------------|
-| `GROQ_API_KEY` | ✅ Yes   | Your Groq API key. Get one free at [console.groq.com](https://console.groq.com) |
-| `SECRET_KEY`   | ✅ Yes   | A long random string used to sign JWT tokens. Use any secure random value.  |
-| `GROQ_MODEL`   | ❌ No    | Override the default Groq model. Default: `llama-3.3-70b-versatile`        |
+| Variable       | Required | Description                                                               |
+|----------------|--------|-----------------------------------------------------------------------------|
+| `GROQ_API_KEY` |  Yes   | Your Groq API key. Get one free at [console.groq.com](https://console.groq.com) |
+| `SECRET_KEY`   |  Yes   | A long random string used to sign JWT tokens. Use any secure random value. |
+| `GROQ_MODEL`   |  No    | Override the default Groq model. Default: `llama-3.3-70b-versatile`        |
 
 Example `.env`:
 
@@ -371,11 +371,11 @@ The AI receptionist handles appointment booking through a guided, multi-step con
 You  →  "I'd like to book an appointment"
 Bot  →  "Of course. Could I get your name please?"
 
-You  →  "Alice"
-Bot  →  "Thank you, Alice. What date would you prefer? (e.g. 2025-08-20)"
+You  →  "Haris"
+Bot  →  "Thank you, Haris. What date would you prefer? (e.g. 2025-08-20)"
 
 You  →  "2025-09-01"
-Bot  →  "Please confirm your appointment details — Name: Alice, Date: 2025-09-01.
+Bot  →  "Please confirm your appointment details — Name: Haris, Date: 2025-09-01.
          Reply 'yes' to confirm or 'no' to cancel."
 
 You  →  "yes"
@@ -448,6 +448,6 @@ This project is licensed under the **MIT License** — free to use, modify, and 
 ## Author
 
 **Haris Hussain**  
-Developer — 3novatorTech  
+Developer 3novatorTech  
 
 Built with Python, Flask, and the Groq API.
